@@ -6,8 +6,8 @@ from './countries.js';
 
 // Travers Full array
 countries.map((list, i) => {
-    // console.log(`Listed country is ${list.name}`)
-    // console.log(`Listed country code is ${list.code}`)
+    console.log(`Listed country is ${list.name}`)
+    console.log(`Listed country code is ${list.code}`)
 })
 
 
@@ -15,20 +15,26 @@ countries.map((list, i) => {
 for (let item of countries) {
     let checkCountry = "Viatenam";
     if (item.name === checkCountry) {
-        // console.log(`Country is found`);
+        console.log(`Country is found`);
         break;
     } else {
         countries.push({
             name: checkCountry,
             "code": checkCountry.slice(0, 3).toUpperCase()
         })
-        // console.log(countries);
+        console.log(countries);
         break;
     }
 }
 
 // Sort Full Array Object
-countries.sort(
-    (p1, p2) =>
-    (p1.name > p2.name) ? 1 : (p1.name < p2.name) ? -1 : 0);
+countries.sort((a, b) => {
+    if (a.name > b.name) {
+        return 1
+    } else if (a.name < b.name) {
+        return -1
+    } else {
+        return 0
+    }
+})
 console.log(countries)
